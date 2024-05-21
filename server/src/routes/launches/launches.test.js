@@ -29,12 +29,12 @@ describe('Test POST /launches', () => {
       .expect('Content-Type', /json/)
       .expect(201)
 
-  const requestDate = new Date(completeLaunchData.launchDate).valueOf()
-  const responseDate = new Date(response.body.launchDate).valueOf()
+    const requestDate = new Date(completeLaunchData.launchDate).valueOf()
+    const responseDate = new Date(response.body.launchDate).valueOf()
 
-  expect(responseDate).toBe(requestDate)
+    expect(responseDate).toBe(requestDate)
 
-  expect(response.body).toMatchObject(partialLaunchData)
+    expect(response.body).toMatchObject(partialLaunchData)
   })
 
   test('Should catch missing required properties', async() => {
